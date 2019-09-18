@@ -1,0 +1,608 @@
+{
+    "verbs": [
+      {
+        "v":"USE",
+        "map":"USE"
+      },
+      {
+        "v":"U",
+        "map":"USE"
+      },
+      {
+        "v": "EXITS",
+        "map": "EXITS"
+      },
+      {
+        "v":"TAKE",
+        "map":"TAKE"
+      },
+      {
+        "v":"T",
+        "map":"TAKE"
+      },
+      {
+        "v":"GET",
+        "map":"TAKE"
+      },
+      {
+        "v":"G",
+        "map":"TAKE"
+      },
+      {
+        "v": "0101",
+        "map":"0101"
+      },
+      {
+        "v": "BACK",
+        "map": "BACK"
+      },
+      {
+        "v": "B",
+        "map": "BACK"
+      },
+      {
+        "v": "QUIT",
+        "map": "QUIT"
+      },
+      {
+        "v": "INSPECT",
+        "map": "INSPECT"
+      },
+      {
+        "v": "I",
+        "map": "INSPECT"
+      },
+      {
+        "v": "READ",
+        "map": "READ"
+      },
+      {
+        "v": "R",
+        "map": "READ"
+      },
+      {
+        "v": "NORTH",
+        "map": "NORTH"
+      },
+      {
+        "v": "N",
+        "map": "NORTH"
+      },
+      {
+        "v": "SOUTH",
+        "map": "SOUTH"
+      },
+      {
+        "v": "S",
+        "map": "SOUTH"
+      },
+      {
+        "v": "EAST",
+        "map": "EAST"
+      },
+      {
+        "v": "E",
+        "map": "EAST"
+      },
+      {
+        "v": "WEST",
+        "map": "WEST"
+      },
+      {
+        "v": "W",
+        "map": "WEST"
+      }
+    ],
+    "rooms": {
+      "START": {
+        "name": "in the Bridge.",
+        "desc": "The lights above flicker on and off. The windows are completely covered in metal as the controls refuse to work no matter how hard you try.",
+        "exits": [
+          {
+            "verb": "SOUTH",
+            "target": "HALLWAY NORTH",
+            "condition": ""
+          },
+          {
+            "verb": "INSPECT",
+            "target": "BRIDGE INSPECT",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "BRIDGE INSPECT":
+      {
+        "name": "inspecting the bridge.",
+        "desc": "The controls don't work and communications are down. There are holes in one of the panels and a dark stain on the floor beneath. Laying on the floor by the stain is an intact holo-pad.",
+        "exits":
+        [
+          {
+            "verb": "READ",
+            "target": "HOLOPAD1",
+            "condition": ""
+          },
+          {
+            "verb": "BACK",
+            "target": "START",
+            "condition":""
+          }
+        ],
+        "inventory": []
+      },
+      "HOLOPAD1":
+      {
+        "name": "reading the holopad.",
+        "desc": "These are my final moments. I hear them pounding on the door. I'm pretty sure one of them shouted for a torch so it's only a matter of time. I tried my best but I guess that wasn't enough. I'm just glad I will see Mary soon. *End Entry*",
+        "exits": 
+        [
+          {
+            "verb": "BACK",
+            "target": "START",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "HALLWAY NORTH": 
+      {
+        "name": "in the northern part of the corridor",
+        "desc": "The corridor is very dark and your shoulders almost graze the cold metal walls. To your left is a door labeled Barracks. To your right is a door labeled Captains Quarters, however this door looks like it requires a keycard to open.",
+        "exits": 
+        [
+          {
+            "verb":"SOUTH",
+            "target": "HALLWAY INTERSECTION",
+            "condition":""
+          },
+          {
+            "verb": "NORTH",
+            "target": "START",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "BARRACKS",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAPT QUARTERS",
+            "condition": ""
+          },
+          {
+            "verb": "INSPECT",
+            "target":"INSPECT HALLWAY NORTH",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "INSPECT HALLWAY NORTH":
+      {
+        "name": "inspecting the northern part of the corridor",
+        "desc": "The corridor is relatively dark besides the one flourescent light at the end that is still on. It feels cold and eerie. The air is fouled by a putrid smell seemingly coming from the barracks.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"INSPECT HALLWAY NORTH",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "BARRACKS":
+      {
+        "name":"in the barracks",
+        "desc":"The stench gets only more powerful. There are rows and rows of beds and about half of them have something on them with white sheets over them, at least you think they were white at one point. Instead they are stained terrible unrecognizable stains",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY NORTH",
+            "condition":""
+          },
+          {
+            "verb":"INSPECT",
+            "target":"INSPECT BARRACKS",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "INSPECT BARRACKS":
+      {
+        "name":"inspecting the barracks",
+        "desc":"You lift on of the sheets to only immediately regret it. The smell so powerful you retch and cover your mouth to not add to the smell of the room. A body strapped to the bed fram with sheets and belts with such a horrid expression that makes it seem like the victim is perpetually screaming for release. On an empty bed you see another holopad. Maybe it has more information.",
+        "exits":
+        [
+          {
+            "verb":"READ",
+            "target":"HOLOPAD2",
+            "Ccondition":""
+          },
+          {
+            "verb":"BACK",
+            "target":"BARRACKS",
+            "Ccondition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD2":
+      {
+        "name": "reading the holopad.",
+        "desc":"Deceased: Terrance Williams(Dead), Miles Konners(Ejected), Yasaharu Kamoshida(Ejected), Bjorn Adell(Dead), Mary ONeal(Dead)..... The holopad lists more names either saying jected or dead next to each one.",
+        "exits": 
+        [
+          {
+            "verb":"BACK",
+            "target":"BARRACKS",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "CAPT QUARTERS":
+      {
+        "name":"in the Captain's quarters",
+        "desc": "This room looks careless. Everything is strewn about the room as if whoever resided here had just given up on presenting themselves well.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY NORTH",
+            "condition":""
+          },
+          {
+            "verb":"INSPECT",
+            "target":"INSPECT CAPT QUARTERS",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "INSPECT CAPT QUARTERS":
+      {
+        "name":"inspecting the captain's quarters.",
+        "desc":"You step over and around the clothes and empty bottles around the room. You find a picture frame face down on a pillow on the bed. You pick it up and see a woman in front of a Space Coalition flag and a US flag, in uniform, and saluting. An enscription at the bottom of the frame read 'Cpl. Mary ONeall. SS Magellan'. You feel a wave of sadness wash over you and put the photo down to avoid further heart break. A holopad peeks out from under the bed.",
+        "exits":
+        [
+          {
+            "verb":"READ",
+            "target":"HOLOPAD3",
+            "condition":""
+          },
+          {
+            "verb":"BACK",
+            "target":"CAPT QUARTERS",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD3":
+      {
+        "name":"reading the holopad.",
+        "desc":"There's going to be a New Years party in the Mess Hall tonight. It's also Mary's birthday. I'm so proud of her and I had to barely do any convincing to get her on this voyage. I'm glad she's here. Her mother would be proud.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"CAPT QUARTERS",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HALLWAY INTERSECTION":
+      {
+        "name":"in the corridor's intersection.",
+        "desc":"It seems there are more rooms down the left and right corridor. Both still dark much like the rest of the ship but it may be a good idea to investigate.",
+        "exits":
+        [
+          {
+            "verb":"SOUTH",
+            "target": "HALLWAY SOUTH",
+            "condition":""
+          },
+          {
+            "verb": "NORTH",
+            "target": "HALLWAY NORTH",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "HALLWAY WEST",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "HALLWAY EAST",
+            "condition": ""
+          }
+      ],
+      "inventory":[]
+      },
+      "HALLWAY WEST":
+      {
+        "name": "in the western part of the corridor",
+        "desc": "In front of you are the escape pods and behind you is a door labelled 'mess hall'. This may be a way to get off the ship.",
+        "exits": 
+        [
+          {
+            "verb":"SOUTH",
+            "target": "MESS HALL",
+            "condition":""
+          },
+          {
+            "verb": "0101",
+            "target": "END",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "HALLWAY INTERSECTION",
+            "condition": ""
+          },
+          {
+            "verb": "INSPECT",
+            "target":"INSPECT HALLWAY WEST",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "INSPECT HALLWAY WEST":
+      {
+        "name":"inspecting the western corridor.",
+        "desc":"You notice that there is only one escape pod left and next to its hatch is a keypad that accepts a four digit code to open the hatch.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY WEST",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "MESS HALL":
+      {
+        "name": "in the Mess Hall",
+        "desc": "There is a large half hung banner that says 'Happy New Years'. There are plates with half eaten food, streamers, and cone-shaped party hats all over the tables and floor. The room gives you a sinking feeling in the pit of your stomach but you don't know why. A holopad sits on a bench in the far end of the room.",
+        "exits":
+        [
+          {
+            "verb":"READ",
+            "target":"HOLOPAD4",
+            "condition":""
+          },
+          {
+            "verb":"BACK",
+            "target":"HALLWAY WEST",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD4":
+      {
+        "name":"reading the holopad.",
+        "desc":"I told them I came to clean up but I just needed to get away from the yelling. Everyone is throwing blame around and it seems like it all comes to me eventually. I worry about Mary. I told her she could sleep in my quarters but she insisted on staying in the med bay with the patients. I left her my keycard just in case she changes her mind. I hope she's being careful.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"MESS HALL",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HALLWAY EAST":
+      {
+        "name": "in the eastern corridor",
+        "desc": "There are scratch marks and a dark streak leading to a door labeled Med Bay behind you. In front of you is a door labeled Armory.",
+        "exits": 
+        [
+          {
+            "verb":"SOUTH",
+            "target": "MED BAY",
+            "condition":""
+          },
+          {
+            "verb": "NORTH",
+            "target": "ARMORY",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "HALLWAY INTERSECTION",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "MED BAY":
+      {
+        "name": "in the Med Bay",
+        "desc":"The smell from outside the barracks is in here too. The beds all have something on them covered in a white sheet.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY EAST",
+            "condition":""
+          },
+          {
+            "verb":"INSPECT",
+            "target":"INSPECT MED BAY",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "INSPECT MED BAY":
+      {
+        "name":"inspecting the Med Bay.",
+        "desc":"You lift one of the sheet and immediately turn away. It's a girl that looks strangely familiar to you. She looks like she was caught mid-scream and you notice a bloody hole in her forehead. There is a holopad and a teddy bear next to her side.\nAll the other beds have torn bed sheets and all the bodies are tied to the posts.",
+        "exits":
+        [
+          {
+            "verb":"READ",
+            "target":"HOLOPAD6",
+            "condition":""
+          },
+          {
+            "verb":"BACK",
+            "target":"MED BAY",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD6":
+      {
+        "name":"reading the holopad.",
+        "desc":"I had to give her some sort of tranquilizer to get her to calm down. I told her not to get too close to them. Damn her for being stubborn. I was going to give this to you at the party before it all happened. You use to always ask for it at night because you were too scared to sleep without him. Those days are long gone but I hope he helps you sleep this time.\n\nAnother entry lies on this pad: I'm sorry I'm sorry I'm sorry I'm sorry I'm sorry I'm sorry...(It continues for a while with nothing else).\nYou take the teddy bear. You aren't sure why but it gives you comfort.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"MED BAY",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "ARMORY":
+      {
+        "name": "in the Armory",
+        "desc":"The cabinets that once held are the weapons have scorch marks and dents all over it. All the ammunition boxes are empty. It looks like there was enough here to arm the entire crew. A holopad sits on one of the shelves.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY EAST",
+            "condition":""
+          },
+          {
+            "verb":"READ",
+            "target":"HOLOPAD7",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD7":
+      {
+        "name":"reading the holopad.",
+        "desc":"Damn they got here first. I ordered executions of the sick...I had to...for her I had to for her. Nobody else could get sick. I guess that...agitated them. If they're armed now I can't stop them. I have to lock down the bridge and make sure they stay put. I already changed the escape pod codes to something I'd remember when everything first started. Hopefully they haven't figured it out.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"ARMORY",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HALLWAY SOUTH":
+      {
+        "name": "in the southern corridor",
+        "desc": "The corridor is very dark and your shoulders almost graze the cold metal walls. To your left is a door labeled Barracks. To your right is a door labeled Captains Quarters.",
+        "exits": 
+        [
+          {
+            "verb":"SOUTH",
+            "target": "ENGINE ROOM",
+            "condition":""
+          },
+          {
+            "verb": "NORTH",
+            "target": "HALWAY INTERSECTION",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "STORAGE",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "AIRLOCK",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "STORAGE":
+      {
+        "name": "in the Storage Room.",
+        "desc":"It's incredibly stuffy in here. The room looks like it hasn't been touched in a long time. There is still non-perishable food unopened. A holopad rests on one of the boxes.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY SOUTH",
+            "condition":""
+          },
+          {
+            "verb":"READ",
+            "target":"HOLOPAD5",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "HOLOPAD5":
+      {
+        "name":"reading the holopad.",
+        "desc":"I want to make Mary a cake but all we have is freeze dried stuff. I may just stick my lighter in some freeze dried ice cream and call it a cake but at least it's something.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"STORAGE",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "ENGINE ROOM":
+      {
+        "name": "in the Engine Room",
+        "desc":"It's uncomfortably cold in this room. The engines are turned off and the controls look bashed to hell. Why stop the ship from moving?",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY SOUTH",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "AIRLOCK":
+      {
+        "name": "looking through the airlock's window.",
+        "desc":"You peer through the window and see a room that should have an EVA suit but it's compartment was empty. The other side of the room has a door leading outside and you squint to see through its window. Floating in space you see several very still silhouettes of what you assume are people. You shutter at the thought.",
+        "exits":
+        [
+          {
+            "verb":"BACK",
+            "target":"HALLWAY SOUTH",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "END":
+      {
+        "name": "in the escape pod"
+      }
+    }
+  }
