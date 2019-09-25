@@ -94,6 +94,7 @@ def end_game(winning,points,moves):
         print('You scored {points} points in {moves} moves. See you next time!'.format(moves=moves, points=points))
 
 def add_inventory(item):
+    # This is an interesting addition to the game
     player_inventory.append(item)
     print("\nYou picked up the keycard.")
 
